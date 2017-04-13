@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/head :: head"></head>
+<body>
+<nav th:include="fragments/navbar :: navbar" class="navbar navbar-default navbar-fixed-top"></nav>
+<div class="container">
+
+    <div class="jumbotron">
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <H1>Mail</H1>
+        <a class="btn btn-lg btn-primary" href="sendmail" role="button">Send mail</a>
+    </div>
+</div>
+
+<div th:include="fragments/footer :: footer"></div>
+</body>
+</html>

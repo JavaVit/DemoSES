@@ -18,16 +18,21 @@ public class MailSenderService {
     private EmailSender emailSender;
 
     @Autowired
-    MailClient mailClient;
-
-    @Autowired
     PrepareEmail prepareEmail;
 
+    //demo
     @Value("${aws.fromEmail}")
     private String fromEmail;
-
     @Value("${aws.toEmail}")
     private String toEmail;
+    @Value("${aws.image1}")
+    private String image1;
+    @Value("${aws.image2}")
+    private String image2;
+    @Value("${aws.mailto}")
+    private String mailto;
+    @Value("${aws.email}")
+    private String email;
 
 
     public void sendMail() {
@@ -36,12 +41,10 @@ public class MailSenderService {
         context.setVariable("title", "Встречай весну с размахом.");
         context.setVariable("description", "Длинное описание");
         context.setVariable("user", "Виталик");
-        context.setVariable("image2", "https://*********.emailimage/example2.png");
-        context.setVariable("image1", "https://*********.emailimage/example1.png");
-        context.setVariable("mailto", "mailto:*******@list.ru");
-        context.setVariable("email", "********@list.ru");
-
-
+        context.setVariable("image1", image1);
+        context.setVariable("image2", image2);
+        context.setVariable("mailto", mailto);
+        context.setVariable("email", email);
 
         String body = prepareEmail.getBody(context);
 
@@ -52,13 +55,6 @@ public class MailSenderService {
                 .subject("Java test send mail")
                 .build();
 
-//        try {
-//            mailClient.sendMail(email);
-//        } catch (IOException e) {
-//            log.error(e.getMessage(), e);
-//        }
-
         emailSender.sendMail(email);
-
     }
 }

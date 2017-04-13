@@ -1,4 +1,4 @@
-package com.example.service;
+package com.example.emailing.domain;
 
 import lombok.Builder;
 import lombok.Data;

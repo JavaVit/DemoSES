@@ -1,5 +1,6 @@
 package com.example.service;
 
+import com.example.emailing.domain.Email;
 import com.example.emailing.service.EmailSender;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -2,7 +2,7 @@ package com.example.emailing.service;
 
 import com.amazonaws.services.simpleemail.AmazonSimpleEmailService;
 import com.amazonaws.services.simpleemail.model.*;
-import com.example.service.Email;
+import com.example.emailing.domain.Email;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
